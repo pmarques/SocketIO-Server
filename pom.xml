@@ -1,34 +1,99 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>eu.k2c</groupId>
-		<artifactId>socket.io</artifactId>
-		<version>7.0-SNAPSHOT</version>
-		<relativePath>..</relativePath>
-	</parent>
+	<groupId>eu.k2c</groupId>
+	<artifactId>socket.io</artifactId>
+	<version>8.5-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
-	<groupId>eu.k2c.socket.io</groupId>
-	<artifactId>netty-server</artifactId>
-	<packaging>jar</packaging>
-	
-	<description>Socket.IO Netty Server</description>
+	<name>Socket.IO</name>
+	<description>Socket.IO Server</description>
 
+	<modules>
+		<module>SocketIO-API</module>
+		<module>SocketIO-Core</module>
+		<module>SocketIO-Netty</module>
+	</modules>
+
+	<licenses>
+		<license>
+			<name>MIT</name>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Patrick F. Marques</name>
+			<email>patrickfmarques@gmail.com</email>
+			<organization>K2C</organization>
+			<organizationUrl>http://k2c.eu</organizationUrl>
+		</developer>
+	</developers>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.jboss.netty</groupId>
-			<artifactId>netty</artifactId>
-			<version>4.0.0.Alpha1-SNAPSHOT</version>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>6.0-RC2</version>
 		</dependency>
 		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-jaxrs</artifactId>
-			<version>1.8.5</version>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
 		</dependency>
 	</dependencies>
 
-	<name>Socket.IO Server</name>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.mycila.maven-license-plugin</groupId>
+				<artifactId>maven-license-plugin</artifactId>
+				<configuration>
+					<header>LICENSE.txt</header>
+					<properties>
+						<year>2011</year>
+						<user>Patrick Marques</user>
+						<email>patrickfmarques@gmail.com</email>
+						<organization>K2C</organization>
+					</properties>
+					<excludes>
+						<exclude>LICENSE.txt</exclude>
+						<exclude>**/src/test/resources/**</exclude>
+						<exclude>**/src/test/resources/**</exclude>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
+	<repositories>
+		<repository>
+			<id>java.net2</id>
+			<name>Repository hosting the jee6 artifacts</name>
+			<url>http://download.java.net/maven/2</url>
+		</repository>
+	</repositories>
 </project>

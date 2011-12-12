@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>eu.k2c</groupId>
+		<artifactId>socket.io</artifactId>
+		<version>8.5-SNAPSHOT</version>
+	</parent>
+
+	<groupId>eu.k2c.socket.io</groupId>
+	<artifactId>SocketIO-Core</artifactId>
+	<packaging>jar</packaging>
+	
+	<name>Socket.IO Core</name>
+	<description>Socket.IO Server Core</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-jaxrs</artifactId>
+			<version>1.8.5</version>
+		</dependency>
+		<dependency>
+			<groupId>eu.k2c.socket.io</groupId>
+			<artifactId>SocketIO-API</artifactId>
+			<version>8.5-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+</project>
