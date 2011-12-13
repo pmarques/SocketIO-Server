@@ -8,7 +8,8 @@ Status
 ======
 
  * Tested with Socket.IO client acceptance tests (authorizing for namespaces are not supported yet)
- * This only supports websockets transport, XHRPolling and Flash still under development.
+ * This only supports websockets transport.
+ * XHRPolling and Flash still under development.
 
 License
 =======
